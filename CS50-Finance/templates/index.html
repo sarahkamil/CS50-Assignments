@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Index Page
+{% endblock %}
+
+{% block main %}
+     <div>
+        {{ bought_message }}
+    </div>
+    <table style="width:100%">
+        <tr>
+            <th>Symbol</th>
+            <th>Name</th>
+            <th>Shares</th>
+            <th>Price</th>
+            <th>TOTAL</th>
+        </tr>
+        {% for row in rows %}
+            <tr>
+                <td> {{ row["stock_symbol"]}} </td>
+                <td> {{ row["stock_name"]}} </td>
+                <td> {{ row["num_shares"]}} </td>
+                <td> {{ row["stock_price"]}} </td>
+                <td> {{ row["total"]}} </td>
+            </tr>
+        {% endfor %}
+
+    </table>
+
+
+{% endblock %}
